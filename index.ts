@@ -6,7 +6,6 @@ class HelloWorldApp{
         res.end("Hello World!");
     }
 }
-
 new HelloWorldApp();
 server.listen(1337);
 
@@ -16,14 +15,12 @@ var url = require('url');
 http.createServer(function (req, res) {
     var purl = url.parse(req.url,true);
     if(purl.pathname==='/hello_world') {
-        res.writeHead(200, {'Content-Type': 'text/plain'});
         res.end('Hello World!\n');
     }else{
         res.writeHead(404);
         res.end();
     }
 }).listen(1338, '127.0.0.1');
-
 
 var express = require('express');
 var expressApp = express();
@@ -41,14 +38,22 @@ koaApp.use(koaRouter.get('/hello_world', function(ctx){
 }));
 koaApp.listen(1340);
 
+http.createServer(function (req, res) {
+    res.end('Hello World!\n');
+}).listen(1341, '127.0.0.1');
+
 // ./wrk -t12 -c400 -d30s http://127.0.0.1:1337/hello_world
-// 27340 requests per second
+// 34944 requests per second
 
 // ./wrk -t12 -c400 -d30s http://127.0.0.1:1338/hello_world
-// 31648 requests per second
+// 41761 requests per second
 
 // ./wrk -t12 -c400 -d30s http://127.0.0.1:1339/hello_world
-// 17762 requests per second
+// 17589 requests per second
 
 // ./wrk -t12 -c400 -d30s http://127.0.0.1:1340/hello_world
-// 25671 requests per second
+// 24268 requests per second
+
+// Unrouted
+// ./wrk -t12 -c400 -d30s http://127.0.0.1:1341/hello_world
+// 40390 requests per second
