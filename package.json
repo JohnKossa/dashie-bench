@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dashie": "0.0.7",
+    "dashie": "^0.0.8",
     "express": "^4.16.2",
     "koa": "^2.4.1",
     "koa-route": "^3.2.0"

@@ -43,17 +43,17 @@ http.createServer(function (req, res) {
 }).listen(1341, '127.0.0.1');
 
 // ./wrk -t12 -c400 -d30s http://127.0.0.1:1337/hello_world
-// 34944 requests per second
+// 32726.62 requests per second
 
 // ./wrk -t12 -c400 -d30s http://127.0.0.1:1338/hello_world
-// 41761 requests per second
+// 40176.16 requests per second
 
 // ./wrk -t12 -c400 -d30s http://127.0.0.1:1339/hello_world
-// 17589 requests per second
+// 17076.6 requests per second
 
 // ./wrk -t12 -c400 -d30s http://127.0.0.1:1340/hello_world
-// 24268 requests per second
+// 22766.68 requests per second
 
 // Unrouted
 // ./wrk -t12 -c400 -d30s http://127.0.0.1:1341/hello_world
-// 40390 requests per second
+// 37530.8 requests per second
